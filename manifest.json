@@ -1,0 +1,17 @@
+{
+  "name": "reddit player",
+  "description": "Makes reddit more fun",
+  "version": "1",
+  "app": {
+    "launch": {
+      "local_path": "main.html"
+    }
+  },
+  "permissions": [
+    "http://www.reddit.com/"
+  ],
+  "icons": {
+    "16": "icon_16.png",
+    "128": "icon_128.png"
+  }
+}
