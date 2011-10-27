@@ -21,8 +21,10 @@ function showPost(which) {
         var current = (which === 0) ? 0 : (window.current + which);
         var post = window.posts[current].data;
 
-        $("post_title").innerHTML = post.title;
-        $("post").src = post.url;
+        var post_title = $$(".post_title")[0];
+        post_title.innerHTML = post.title;
+        post_title.href = post.url;
+        $$(".post")[0].src = post.url;
 
         window.current = current;
     }
