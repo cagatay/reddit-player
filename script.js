@@ -18,11 +18,23 @@ function reddit_request(callback, subreddit) {
 
 function showPost(which) {
     function setContent() {
+        if (which === 1) {
+            $$(".current")[0].removeClass("current").addClass("previous");
+            $$(".next")[0].removeClass("next").addClass("current");
+            return;
+        }
         var current = (which === 0) ? 0 : (window.current + which);
         var post = window.posts[current].data;
+        console.log(post);
 
-        var post_title = $$(".post_title")[0];
+        var post_title = $$(".title")[0];
+        var post_subreddit = $$(".subreddit")[0];
+        var post_score = $$(".score")[0];
+        var post_ups = $("up");
         post_title.innerHTML = post.title;
+        post_subreddit.innerHTML = post.subreddit;
+        post_score.innerHTML = post.score;
+        post_ups.innerHTML = post.ups;
         post_title.href = post.url;
         $$(".post")[0].src = post.url;
 
@@ -33,8 +45,8 @@ function showPost(which) {
 }
 
 window.addEvent('domready', function () {
-    $("next").addEvent('click', showPost(1));
-    $("previous").addEvent('click', showPost(-1));
+    $("up").addEvent('click', showPost(1));
+    $("down").addEvent('click', showPost(-1));
     reddit_request(function (res) {
         window.posts = res.data.children;
         showPost(0)();

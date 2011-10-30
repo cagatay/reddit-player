@@ -4,18 +4,26 @@
     <link rel="stylesheet" type="text/css" href="style.css" \>
   </head>
   <body>
-    <button class="arrow" id="previous">&#9664;</button>
-    <div class="middle">
-      <button class="arrow" id="up">&#9650;</button>
-      <div class="content">
-        <div class="post_container">
-          <a class="post_title"></a>
-          <iframe class="post"></iframe>
-        </div>
+    <div class="post_container current">
+      <div class="post_bar">
+        <div class="score"></div>
+        <a class="title"></a>
+        <a class="subreddit"></a>
+        <button id="up"></button>
+        <button id="down"></button>
       </div>
-      <button class="arrow" id="down">&#9660;</button>
+      <iframe class="post"></iframe>
     </div>
-    <button class="arrow" id="next">&#9654;</button>
+    <div class="post_container next">
+      <div class="post_bar">
+        <div class="score"></div>
+        <a class="title">helllo</a>
+        <a class="subreddit"></a>
+        <button id="up"></button>
+        <button id="down"></button>
+      </div>
+      <iframe class="post"></iframe>
+    </div>
     <script src="lib/mootools-core-1.4.1-full-nocompat.js"></script>
     <script src="script.js"></script>
   </body>
